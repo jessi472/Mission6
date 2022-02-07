@@ -41,6 +41,7 @@ namespace Mission6.Controllers
         {
             //Add new task
             ViewBag.Category = taskContext.Category.ToList();
+            return View();
         }
 
         [HttpPost]
@@ -93,7 +94,7 @@ namespace Mission6.Controllers
         {
             taskContext.Responses.Remove(tr);
             taskContext.SaveChanges();
-            return RedirectToAction("ViewTask");
+            return RedirectToAction("ViewTasks");
         }
 
     }
