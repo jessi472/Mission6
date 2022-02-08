@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Mission6.Models;
+/*using Mission6.Models;*/
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,19 +12,19 @@ namespace Mission6.Controllers
     public class HomeController : Controller
     {
 
-        private NewTaskContext taskContext { get; set; }
+        /*private NewTaskContext taskContext { get; set; }
 
         public HomeController( NewTaskContext someTask)
         {
             TaskContext = someTask;
-        }
+        }*/
 
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpGet]
+        /*[HttpGet]
         public IActionResult ViewTasks()
         {
             // View Quadrants of tasks
@@ -95,7 +95,7 @@ namespace Mission6.Controllers
             taskContext.Responses.Remove(tr);
             taskContext.SaveChanges();
             return RedirectToAction("ViewTasks");
-        }
+        }*/
 
     }
 }

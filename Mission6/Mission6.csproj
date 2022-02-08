@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Views\Home\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
 
