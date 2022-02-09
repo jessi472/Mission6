@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-/*using Mission6.Models;*/
+using Mission6.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,8 +15,8 @@ namespace Mission6.Controllers
         private NewTaskContext TaskContext { get; set; }
 
         //For some reason this needed to be private. May cause more probs
-        private HomeController(NewTaskContext someTask)
-        { 
+        public HomeController(NewTaskContext someTask)
+        {
             TaskContext = someTask;
         }
 

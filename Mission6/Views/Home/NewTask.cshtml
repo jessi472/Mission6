@@ -5,3 +5,33 @@
     ViewData["Title"] = "New Task";
 }
 
+@model Mission6.Models.CoveyForm
+
+<h1>Create a New Task</h1>
+<form method="post">
+    <label asp-for="Task">Task Description</label>
+    <input />
+    <label asp-for="DueDate">Due Date</label>
+    <input />
+    <label asp-for="Quadrant">Quadrant</label>
+    <select asp-for="Quadrant">
+        <option value="">Select One</option>
+        <option value="Important & Urgent">Important & Urgent</option>
+        <option value="Not Important & Urgent">Not Important & Urgent</option>
+        <option value="Important & Not Urgent">Important & Not Urgent</option>
+        <option value="Not Important & Not Urgent">Not Important & Not Urgent</option>
+    </select>
+    <label asp-for="Completed">Completed</label>
+    <select asp-for="Completed">
+        <option value=false>No</option>
+        <option value=true>Yes</option>
+    </select>
+    <label asp-for="Category">Category</label>
+    <select asp-for="Category">
+        <option value="">Select One</option>
+        @*@foreach (Category c in ViewBag.Category)
+        {
+            <option value="@c.CategoryID">@c.CategoryTitle</option>
+        }*@
+    </select>
+</form>
