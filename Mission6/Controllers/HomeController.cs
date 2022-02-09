@@ -34,18 +34,17 @@ namespace Mission6.Controllers
                 //.OrderBy (x => x.Value)
                 .ToList();
             return View(tasks);
-        }
+        }*/
 
         [HttpGet]
         public IActionResult NewTask()
         {
             //Add new task
-            ViewBag.Category = taskContext.Category.ToList();
             return View();
         }
-
+        /*
         [HttpPost]
-        public IActionResult NewTask(TaskResponse tr)
+        public IActionResult NewTask()
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +64,7 @@ namespace Mission6.Controllers
             }
             
         }
-
+        
         [HttpGet]
         public IActionResult EditTask(int taskid)
         {
@@ -73,7 +72,7 @@ namespace Mission6.Controllers
             var task = taskContext.Responses.Single(x  => x.TaskId == taskid);
             return View("NewTask", task);
         }
-
+        
         [HttpPost]
         public IActionResult EditTask (TaskResponse tr)
         {
@@ -81,7 +80,7 @@ namespace Mission6.Controllers
             taskContext.SaveChanges();
             return RedirectToAction("ViewTasks")
         }
-
+        
         [HttpGet]
         public IActionResult DeleteTask(int taskid)
         {
