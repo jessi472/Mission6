@@ -42,11 +42,13 @@ namespace Mission6.Controllers
         {
             //Add new task
             ViewBag.Category = TaskContext.CategoryResp.ToList();
-            return View();
+            return View("NewTask");
         }
 
         [HttpPost]
         public IActionResult NewTask(CoveyForm tr)
+
+
         {
             if (ModelState.IsValid)
             {
