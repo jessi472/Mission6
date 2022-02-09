@@ -16,7 +16,7 @@ namespace Mission6.Controllers
 
         //For some reason this needed to be private. May cause more probs
         public HomeController(NewTaskContext someTask)
-        { 
+        {
             TaskContext = someTask;
         }
 
