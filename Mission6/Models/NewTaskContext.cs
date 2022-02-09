@@ -4,7 +4,7 @@ using Mission6.Models;
 
 namespace Mission6
 {
-    internal class NewTaskContext : DbContext
+    public class NewTaskContext : DbContext
     {
         public NewTaskContext(DbContextOptions<NewTaskContext> options) : base (options)
             {
