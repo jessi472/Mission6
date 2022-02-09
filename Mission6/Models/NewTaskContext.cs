@@ -44,7 +44,8 @@ namespace Mission6
                     Task = "Win Win Win",
                     DueDate="09-09-2022",
                     Quadrant = "1",
-                    Completed = true
+                    Completed = true,
+                    CategoryId = 1
                 });
         }
     }
