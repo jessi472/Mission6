@@ -22,7 +22,13 @@ namespace Mission6.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var recentTasks = TaskContext.TaskResp
+                .Include(x => x.Category)
+                .Where(x => x.Completed == true)
+                .OrderBy(x => x.DueDate)
+                .Take(6)
+                .ToList();
+            return View(recentTasks);
         }
 
         [HttpGet]

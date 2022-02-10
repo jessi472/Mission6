@@ -1,6 +1,7 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Task App";
 }
+@model List<CoveyForm>
 
 <section id="hero-area">
     <div class="container">
@@ -64,7 +65,7 @@ About Section Start
 <!--
 ==================================================
 Portfolio Section Start
-================================================== -->
+================================================== 
 <section id="works" class="works">
     <div class="container">
         <div class="section-heading">
@@ -215,7 +216,7 @@ Portfolio Section Start
             </div>
         </div>
     </div>
-</section> <!-- #works -->
+</section><!-- #works -->
 <!--
 ==================================================
 Portfolio Section Start
@@ -223,13 +224,34 @@ Portfolio Section Start
 <section id="feature">
     <div class="container">
         <div class="section-heading">
-            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Offer From Me</h1>
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Recent Tasks</h1>
             <p class="wow fadeInDown" data-wow-delay=".5s">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed,<br> quasi dolores numquam dolor vero ex, tempora commodi repellendus quod laborum.
+                It's important to recognize the progress you have made! View your recent accomplishments and feel good about your hard work! <br />
+                You recently completed the following tasks:
             </p>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-lg-4">
+            @foreach (var task in Model) {
+                <div class="col-sm-6 col-lg-4">
+                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                        <div class="media-left">
+                            <div class="icon">
+                                <i class="ion-ios-lightbulb-outline"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">@task.Task</h4>
+                            <p>
+                                Due Date: @task.DueDate<br />
+                                Quadrant: @task.Quadrant<br />
+                                Category: @task.Category.CategoryTitle<br />
+                                Completed: @task.Completed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!--<div class="col-sm-6 col-lg-4">
                 <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
                     <div class="media-left">
                         <div class="icon">
@@ -237,24 +259,15 @@ Portfolio Section Start
                         </div>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">Media heading</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                        <h4 class="media-heading">Task Description</h4>
+                        <p>Due Date: <br />
+                        Quadrant: <br />
+                        Category: <br />
+                        Completed: </p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-lightbulb-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Well documented.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
-                    </div>
-                </div>
-            </div>
+            
             <div class="col-sm-6 col-lg-4">
                 <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="900ms">
                     <div class="media-left">
@@ -307,7 +320,7 @@ Portfolio Section Start
                     </div>
                 </div>
             </div>
-        </div>
+        --></div>
     </div>
 </section> <!-- /#feature -->
 <!--
@@ -319,9 +332,9 @@ Call To Action Section Start
         <div class="row">
             <div class="col-md-12">
                 <div class="block">
-                    <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h2>
-                        <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis,<br>possimus commodi, fugiat magnam temporibus vero magni recusandae? Dolore, maxime praesentium.</p>
-                        <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact With Me</a>
+                    <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms"></h2>
+                    <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms"></p>
+                    <!--<a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact With Me</a>-->
                 </div>
             </div>
 
