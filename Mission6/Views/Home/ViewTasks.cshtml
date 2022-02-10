@@ -25,19 +25,19 @@
                                         </tr>
                                     <thead>
                                     <tbody>
-                                        <tr>
-                                            @foreach (var x in Model)
+                                        @foreach (var x in Model)
+                                        {
+                                            if (x.Quadrant == "Important & Urgent")
                                             {
-                                                if (x.Quadrant == "Important & Urgent")
-                                                {
+                                                <tr>
                                                     <td>@x.DueDate</td>
                                                     <td>@x.Task</td>
                                                     <td>@x.Category.CategoryTitle</td>
                                                     <td><a asp-controller="Home" asp-action="EditTask" asp-route-taskid="@x.TaskId">Edit</a></td>
                                                     <td><a asp-controller="Home" asp-action="DeleteTask" asp-route-taskid="@x.TaskId">Delete</a></td>
-                                                }
+                                                </tr>
                                             }
-                                        </tr>
+                                        }
                                     </tbody>
                                 </table>
                             </div>
@@ -54,19 +54,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            @foreach (var x in Model)
+                                        @foreach (var x in Model)
+                                        {
+                                            if (x.Quadrant == "Important & Not Urgent")
                                             {
-                                                if (x.Quadrant == "Important & Not Urgent")
-                                                {
+                                                <tr>
                                                     <td>@x.DueDate</td>
                                                     <td>@x.Task</td>
                                                     <td>@x.Category.CategoryTitle</td>
                                                     <td><a asp-controller="Home" asp-action="EditTask" asp-route-taskid="@x.TaskId">Edit</a></td>
                                                     <td><a asp-controller="Home" asp-action="DeleteTask" asp-route-taskid="@x.TaskId">Delete</a></td>
-                                                }
+                                                </tr>
                                             }
-                                        </tr>
+                                        }
                                     </tbody>
                                 </table>
                             </div>
@@ -83,19 +83,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            @foreach (var x in Model)
+                                        @foreach (var x in Model)
+                                        {
+                                            if (x.Quadrant == "Not Important & Urgent")
                                             {
-                                                if (x.Quadrant == "Not Important & Urgent")
-                                                {
+                                                <tr>
                                                     <td>@x.DueDate</td>
                                                     <td>@x.Task</td>
                                                     <td>@x.Category.CategoryTitle</td>
                                                     <td><a asp-controller="Home" asp-action="EditTask" asp-route-taskid="@x.TaskId">Edit</a></td>
                                                     <td><a asp-controller="Home" asp-action="DeleteTask" asp-route-taskid="@x.TaskId">Delete</a></td>
-                                                }
+                                                </tr>
                                             }
-                                        </tr>
+                                        }
                                     </tbody>
                                 </table>
 
@@ -113,19 +113,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            @foreach (var x in Model)
+                                        @foreach (var x in Model)
+                                        {
+                                            if (x.Quadrant == "Not Important & Not Urgent")
                                             {
-                                                if (x.Quadrant == "Not Important & Not Urgent")
-                                                {
+                                                <tr>
                                                     <td>@x.DueDate</td>
                                                     <td>@x.Task</td>
                                                     <td>@x.Category.CategoryTitle</td>
                                                     <td><a asp-controller="Home" asp-action="EditTask" asp-route-taskid="@x.TaskId">Edit</a></td>
                                                     <td><a asp-controller="Home" asp-action="DeleteTask" asp-route-taskid="@x.TaskId">Delete</a></td>
-                                                }
+                                                </tr>
                                             }
-                                        </tr>
+                                        } 
                                     </tbody>
                                 </table>
                             </div>
