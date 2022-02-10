@@ -38,13 +38,13 @@
                                 <option value=true>Yes</option>
                             </select>
                             <br />
-                            <label style="color: black; width: 200px " asp-for="Category">Category</label>
-                            <select asp-for="Category" style="width:200px">
+                            <label style="color: black; width: 200px " asp-for="CategoryId">Category</label>
+                            <select asp-for="CategoryId" style="width:200px">
                                 <option value="">Select One</option>
-                                @foreach (Category c in ViewBag.Category)
-                                {
-                                    <option value="@c.CategoryID">@c.CategoryTitle</option>
-                                }
+                                    @foreach (Category c in ViewBag.Category)
+                                    {
+                                        <option value="@c.CategoryId">@c.CategoryTitle</option>
+                                    }
                             </select>
                             <br />
                             <button type="submit" class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right" data-wow-delay=".9s">Add Task</button>
