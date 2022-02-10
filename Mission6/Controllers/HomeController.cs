@@ -55,11 +55,8 @@ namespace Mission6.Controllers
                 TaskContext.Add(tr);
                 TaskContext.SaveChanges();
 
-                //Do we want a confirmation page?
-                //return View("Confirmation");
                 ViewBag.Category = TaskContext.CategoryResp.ToList();
-                return View();
-
+                return View("Confirmation");
             }
 
             else
