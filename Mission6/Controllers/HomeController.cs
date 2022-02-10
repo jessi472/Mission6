@@ -37,7 +37,7 @@ namespace Mission6.Controllers
             // View Quadrants of tasks
             var tasks = TaskContext.TaskResp
                 .Include(x => x.Category)
-                //.Where(x => x.Completed == false)
+                .Where(x => x.Completed == false)
                 //.OrderBy (x => x.Value)
                 .ToList();
             return View(tasks);
@@ -53,27 +53,24 @@ namespace Mission6.Controllers
 
         [HttpPost]
         public IActionResult NewTask(CoveyForm tr)
-
-
         {
+            
+            ViewBag.Categories = TaskContext.CategoryResp.ToList();
             if (ModelState.IsValid)
             {
                 TaskContext.Add(tr);
                 TaskContext.SaveChanges();
 
-                ViewBag.Category = TaskContext.CategoryResp.ToList();
-                return View("Confirmation");
+                return View("Confirmation", tr);
             }
-
             else
             {
-                ViewBag.Category = TaskContext.CategoryResp.ToList();
+                ViewBag.Categories = TaskContext.CategoryResp.ToList();
                 return View();
             }
-
         }
 
-            [HttpGet]
+        [HttpGet]
         public IActionResult EditTask(int taskid)
         {
             ViewBag.Category = TaskContext.CategoryResp.ToList();
@@ -97,7 +94,7 @@ namespace Mission6.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete (CoveyForm tr)
+        public IActionResult DeleteTask(CoveyForm tr)
         {
             TaskContext.TaskResp.Remove(tr);
             TaskContext.SaveChanges();

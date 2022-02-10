@@ -8,7 +8,7 @@ using Mission6;
 namespace Mission6.Migrations
 {
     [DbContext(typeof(NewTaskContext))]
-    [Migration("20220209023549_Initial")]
+    [Migration("20220210044006_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,8 +89,35 @@ namespace Mission6.Migrations
                             CategoryId = 1,
                             Completed = true,
                             DueDate = "09-09-2022",
-                            Quadrant = "1",
+                            Quadrant = "Important & Urgent",
                             Task = "Win Win Win"
+                        },
+                        new
+                        {
+                            TaskId = 2,
+                            CategoryId = 2,
+                            Completed = true,
+                            DueDate = "09-10-2022",
+                            Quadrant = "Important & Not Urgent",
+                            Task = "Win Win Lose"
+                        },
+                        new
+                        {
+                            TaskId = 3,
+                            CategoryId = 3,
+                            Completed = false,
+                            DueDate = "09-11-2022",
+                            Quadrant = "Not Important & Urgent",
+                            Task = "Win Lose Lose"
+                        },
+                        new
+                        {
+                            TaskId = 4,
+                            CategoryId = 4,
+                            Completed = false,
+                            DueDate = "09-12-2022",
+                            Quadrant = "Not Important & Not Urgent",
+                            Task = "Lose Lose Lose"
                         });
                 });
 

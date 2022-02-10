@@ -65,7 +65,22 @@ namespace Mission6.Migrations
             migrationBuilder.InsertData(
                 table: "TaskResp",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
-                values: new object[] { 1, 1, true, "09-09-2022", "1", "Win Win Win" });
+                values: new object[] { 1, 1, true, "09-09-2022", "Important & Urgent", "Win Win Win" });
+
+            migrationBuilder.InsertData(
+                table: "TaskResp",
+                columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
+                values: new object[] { 2, 2, true, "09-10-2022", "Important & Not Urgent", "Win Win Lose" });
+
+            migrationBuilder.InsertData(
+                table: "TaskResp",
+                columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
+                values: new object[] { 3, 3, false, "09-11-2022", "Not Important & Urgent", "Win Lose Lose" });
+
+            migrationBuilder.InsertData(
+                table: "TaskResp",
+                columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
+                values: new object[] { 4, 4, false, "09-12-2022", "Not Important & Not Urgent", "Lose Lose Lose" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_TaskResp_CategoryId",
