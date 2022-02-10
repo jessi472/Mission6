@@ -57,6 +57,7 @@ namespace Mission6.Controllers
 
                 //Do we want a confirmation page?
                 //return View("Confirmation");
+                ViewBag.Category = TaskContext.CategoryResp.ToList();
                 return View();
 
             }
@@ -66,10 +67,10 @@ namespace Mission6.Controllers
                 ViewBag.Category = TaskContext.CategoryResp.ToList();
                 return View();
             }
-            
+
         }
 
-        [HttpGet]
+            [HttpGet]
         public IActionResult EditTask(int taskid)
         {
             ViewBag.Category = TaskContext.CategoryResp.ToList();
