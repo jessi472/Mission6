@@ -37,6 +37,7 @@ namespace Mission6
                     CategoryId = 4,
                     CategoryTitle = "Church"
                 });
+
             mb.Entity<CoveyForm>().HasData(
                 new CoveyForm
                 { 

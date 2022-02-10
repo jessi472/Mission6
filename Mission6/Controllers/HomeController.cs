@@ -16,7 +16,7 @@ namespace Mission6.Controllers
 
         //For some reason this needed to be private. May cause more probs
         public HomeController(NewTaskContext someTask)
-        { 
+        {
             TaskContext = someTask;
         }
 
@@ -47,21 +47,21 @@ namespace Mission6.Controllers
         {
             //Add new task
             ViewBag.Category = TaskContext.CategoryResp.ToList();
-            return View();
+            return View("NewTask");
         }
 
         [HttpPost]
         public IActionResult NewTask(CoveyForm tr)
+
+
         {
             if (ModelState.IsValid)
             {
                 TaskContext.Add(tr);
                 TaskContext.SaveChanges();
 
-                //Do we want a confirmation page?
-                //return View("Confirmation");
-                return View();
-
+                ViewBag.Category = TaskContext.CategoryResp.ToList();
+                return View("Confirmation");
             }
 
             else
@@ -69,10 +69,10 @@ namespace Mission6.Controllers
                 ViewBag.Category = TaskContext.CategoryResp.ToList();
                 return View();
             }
-            
+
         }
 
-        [HttpGet]
+            [HttpGet]
         public IActionResult EditTask(int taskid)
         {
             ViewBag.Category = TaskContext.CategoryResp.ToList();
