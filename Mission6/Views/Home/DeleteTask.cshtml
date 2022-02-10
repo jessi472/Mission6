@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Delete Task";
+}
+
+@model Mission6.Models.CoveyForm
+    <section id="hero-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s">
+
+                        <!-- Slider -->
+                        <section class="cd-intro text-center" style="color: #121212">
+                            <h2>Confirm Deletion</h2>
+                            <h3>Are you sure you want to delete the task @Model.Task?</h3>
+                            <form asp-action="DeleteTask" method="post">
+                                <button class="btn btn-danger">Delete</button>
+                                <a asp-action="ViewTasks">Cancel</a>
+                                <input type="hidden" asp-for="TaskId" />
+                            </form>
+                        </section> <!-- cd-intro -->
+                        <!-- /.slider -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
