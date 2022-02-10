@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Add Task";
+}
+
+@model Mission6.Models.CoveyForm
+
+<div class="container">
+    <h1>Add a Task:</h1>
+    <form class="form-control-lg" method="post">
+        <div asp-validation-summary="All"></div>
+        <label class="col-form-label-sm" asp-for="Completed">Completed:</label>
+        <input class="form-text" type="checkbox" asp-for="Completed" />
+        <label class="col-form-label-sm" asp-for="Task">Task:</label>
+        <input class="form-text" type="text" asp-for="Task" />
+        <label class="col-form-label-sm" asp-for="DueDate">Due Date:</label>
+        <input class="form-text" type="date" asp-for="DueDate" />
+        <label class="col-form-label-sm" asp-for="Quadrant">Quadrant:</label>
+        <input class="form-text" type="number" asp-for="Quadrant" />
+        <select class="col-form-label-sm" asp-for="CategoryId">
+            <option value="">Select a category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">@c.CategoryTitle</option>
+            }
+        </select>
+        <button class="btn btn-primary">Add Task</button>
+    </form>
+</div>

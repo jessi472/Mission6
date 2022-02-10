@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "View Tasks";
+}
+
+@model List<CoveyForm>
+
+<div class="container quadrants-grid">
+    <div class="quadrant">
+        <h3>Important / Urgent</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td>Completed</td>
+                    <td>Due Date</td>
+                    <td>Task</td>
+                    <td>Category</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            <thead>
+            <tbody>
+                <tr>
+                    @foreach (var x in Model)
+                    {
+                        if (x.Quadrant == "1")
+                        {
+                            <td>@x.Completed</td>
+                            <td>@x.DueDate</td>
+                            <td>@x.Task</td>
+                            <td>@x.Category</td>
+                            <td><a asp-controller="Home" asp-action="Edit" asp-route-filmid="@x.TaskId">Edit</a></td>
+                            <td><a asp-controller="Home" asp-action="Delete" asp-route-filmid="@x.TaskId">Delete</a></td>
+                        }
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="quadrant">
+        <h3>Important / Not Urgent</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td>Completed</td>
+                    <td>Due Date</td>
+                    <td>Task</td>
+                    <td>Category</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @foreach (var x in Model)
+                    {
+                        if (x.Quadrant == "2")
+                        {
+                            <td>@x.Completed</td>
+                            <td>@x.DueDate</td>
+                            <td>@x.Task</td>
+                            <td>@x.Category</td>
+                            <td><a asp-controller="Home" asp-action="Edit" asp-route-filmid="@x.TaskId">Edit</a></td>
+                            <td><a asp-controller="Home" asp-action="Delete" asp-route-filmid="@x.TaskId">Delete</a></td>
+                        }
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="quadrant">
+        <h3>Not Important / Urgent</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td>Completed</td>
+                    <td>Due Date</td>
+                    <td>Task</td>
+                    <td>Category</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @foreach (var x in Model)
+                    {
+                        if (x.Quadrant == "3")
+                        {
+                            <td>@x.Completed</td>
+                            <td>@x.DueDate</td>
+                            <td>@x.Task</td>
+                            <td>@x.Category</td>
+                            <td><a asp-controller="Home" asp-action="Edit" asp-route-filmid="@x.TaskId">Edit</a></td>
+                            <td><a asp-controller="Home" asp-action="Delete" asp-route-filmid="@x.TaskId">Delete</a></td>
+                        }
+                    }
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="quadrant">
+        <h3>Not Important / Not Urgent</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td>Completed</td>
+                    <td>Due Date</td>
+                    <td>Task</td>
+                    <td>Category</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @foreach (var x in Model)
+                    {
+                        if (x.Quadrant == "4")
+                        {
+                            <td>@x.Completed</td>
+                            <td>@x.DueDate</td>
+                            <td>@x.Task</td>
+                            <td>@x.Category</td>
+                            <td><a asp-controller="Home" asp-action="Edit" asp-route-filmid="@x.TaskId">Edit</a></td>
+                            <td><a asp-controller="Home" asp-action="Delete" asp-route-filmid="@x.TaskId">Delete</a></td>
+                        }
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
